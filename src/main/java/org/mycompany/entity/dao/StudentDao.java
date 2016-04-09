@@ -2,7 +2,6 @@ package org.mycompany.entity.dao;
 
 import org.mycompany.entity.model.Student;
 
-import javax.sql.DataSource;
 import java.util.List;
 
 public interface StudentDao

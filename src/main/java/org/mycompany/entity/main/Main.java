@@ -1,7 +1,6 @@
 package org.mycompany.entity.main;
 
 import org.mycompany.entity.dao.StudentDao;
-import org.mycompany.entity.dao.impl.StudentDaoImpl;
 import org.mycompany.entity.model.Student;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
