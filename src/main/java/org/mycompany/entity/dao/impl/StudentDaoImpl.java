@@ -3,8 +3,10 @@ package org.mycompany.entity.dao.impl;
 import org.mycompany.entity.mapper.StudentMapper;
 import org.mycompany.entity.model.Student;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCreator;
+import org.springframework.stereotype.Service;
 
 import javax.sql.DataSource;
 import java.sql.Connection;
@@ -14,14 +16,8 @@ import java.util.List;
 
 public class StudentDaoImpl
 {
-    private DataSource dataSource;
+    @Autowired
     private JdbcTemplate jdbcTemplateObject;
-
-    public void setDataSource(DataSource dataSource)
-    {
-        this.dataSource = dataSource;
-        this.jdbcTemplateObject = new JdbcTemplate(dataSource);
-    }
 
     public void create(final String name, final Integer age)
     {
