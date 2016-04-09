@@ -39,8 +39,6 @@ public class StudentDaoImpl implements StudentDao
         });
 
         System.out.println("Created Record Name = " + name + " Age = " + age);
-
-        throw new RuntimeException();
     }
 
     public Student getStudent(Integer id)
@@ -75,8 +73,6 @@ public class StudentDaoImpl implements StudentDao
         });
 
         System.out.println("Deleted Record with ID = " + id);
-
-        throw new RuntimeException();
     }
 
     public void update(final Integer id, final Integer age)
@@ -96,8 +92,6 @@ public class StudentDaoImpl implements StudentDao
         });
 
         System.out.println("Updated Record with ID = " + id);
-
-        throw new RuntimeException();
     }
 
 }
