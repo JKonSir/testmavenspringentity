@@ -8,12 +8,6 @@ import java.util.List;
 public interface StudentDao
 {
     /**
-     * This is the method to be used to initialize
-     * database resources ie. connection.
-     */
-    void setDataSource(DataSource ds);
-
-    /**
      * This is the method to be used to create
      * a record in the Student table.
      */

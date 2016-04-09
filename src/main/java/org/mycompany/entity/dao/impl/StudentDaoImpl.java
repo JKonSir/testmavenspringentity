@@ -1,5 +1,6 @@
 package org.mycompany.entity.dao.impl;
 
+import org.mycompany.entity.dao.StudentDao;
 import org.mycompany.entity.mapper.StudentMapper;
 import org.mycompany.entity.model.Student;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,6 +8,7 @@ import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCreator;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.sql.DataSource;
 import java.sql.Connection;
@@ -14,7 +16,8 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.List;
 
-public class StudentDaoImpl
+@Transactional
+public class StudentDaoImpl implements StudentDao
 {
     @Autowired
     private JdbcTemplate jdbcTemplateObject;
@@ -36,6 +39,8 @@ public class StudentDaoImpl
         });
 
         System.out.println("Created Record Name = " + name + " Age = " + age);
+
+        throw new RuntimeException();
     }
 
     public Student getStudent(Integer id)
@@ -70,6 +75,8 @@ public class StudentDaoImpl
         });
 
         System.out.println("Deleted Record with ID = " + id);
+
+        throw new RuntimeException();
     }
 
     public void update(final Integer id, final Integer age)
@@ -89,6 +96,8 @@ public class StudentDaoImpl
         });
 
         System.out.println("Updated Record with ID = " + id);
+
+        throw new RuntimeException();
     }
 
 }
