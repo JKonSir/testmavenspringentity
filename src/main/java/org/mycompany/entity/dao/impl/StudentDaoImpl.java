@@ -34,8 +34,8 @@ public class StudentDaoImpl
                 return preparedStatement;
             }
         });
+
         System.out.println("Created Record Name = " + name + " Age = " + age);
-        return;
     }
 
     public Student getStudent(Integer id)
@@ -57,6 +57,7 @@ public class StudentDaoImpl
     public void delete(final Integer id)
     {
         final String SQL = "delete from Student where id = ?";
+
         jdbcTemplateObject.update(new PreparedStatementCreator()
         {
             public PreparedStatement createPreparedStatement(Connection connection) throws SQLException
@@ -67,13 +68,14 @@ public class StudentDaoImpl
                 return preparedStatement;
             }
         });
+
         System.out.println("Deleted Record with ID = " + id);
-        return;
     }
 
     public void update(final Integer id, final Integer age)
     {
         final String SQL = "update Student set age = ? where id = ?";
+
         jdbcTemplateObject.update(new PreparedStatementCreator()
         {
             public PreparedStatement createPreparedStatement(Connection connection) throws SQLException
@@ -85,8 +87,8 @@ public class StudentDaoImpl
                 return preparedStatement;
             }
         });
+
         System.out.println("Updated Record with ID = " + id);
-        return;
     }
 
 }
